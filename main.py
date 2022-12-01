@@ -8,6 +8,21 @@ ventana.geometry("500x500")
 ventana.resizable(0,0)
 
 
+#  Obtenemos el largo y  ancho de la pantalla
+wtotal = ventana.winfo_screenwidth()
+htotal = ventana.winfo_screenheight()
+#  Guardamos el largo y alto de la ventana
+wventana = 500
+hventana = 500
+
+#  Aplicamos la siguiente formula para calcular donde debería posicionarse
+pwidth = round(wtotal/2-wventana/2)
+pheight = round(htotal/2-hventana/2)
+
+#  Se lo aplicamos a la geometría de la ventana
+ventana.geometry(str(wventana)+"x"+str(hventana)+"+"+str(pwidth)+"+"+str(pheight))
+
+
 # Función para crear la matriz cuadrada
 def crear_matriz():
     num = int(num_filas_columnas.get())
